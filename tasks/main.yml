@@ -1,0 +1,12 @@
+---
+- name: make a build dir
+  file: state=directory name=/root/hdfs-dockerized
+
+- name: put Dockerfile
+  template: src=Dockerfile dest=/root/hdfs-dockerized/Dockerfile
+
+- name: build a Docker image for HDFS
+  command: docker build -t gitinsky/hdfs:0.1.0 --rm /root/hdfs-dockerized
+
+- name: tag it as latest
+  command: docker build -t gitinsky/hdfs:latest --rm /root/hdfs-dockerized
