@@ -6,7 +6,7 @@
   template: src=Dockerfile dest=/root/hdfs-dockerized/Dockerfile
 
 - name: build a Docker image for HDFS
-  command: docker build -t gitinsky/hdfs:0.1.1 --rm /root/hdfs-dockerized
+  command: docker build -t gitinsky/hdfs:0.1.2 --rm /root/hdfs-dockerized
 
 - name: tag it as latest
   command: docker build -t gitinsky/hdfs:latest --rm /root/hdfs-dockerized
